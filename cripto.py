@@ -1,10 +1,8 @@
 from cryptography.fernet import Fernet
 
-# Chave de criptografia (essa chave deve ficar em segurança)
 encryption_key = Fernet.generate_key()
 cipher_suite = Fernet(encryption_key)
 
-# Simulando um cadastro de funcionários
 funcionarios = {
     "Vitoria": {
         "senha": "python",
@@ -43,7 +41,6 @@ def verificar_autorizacao(funcionario, senha):
             return funcionarios[funcionario]["nivel_acesso"]
     return None
 
-# Simulação de um funcionário tentando acessar a área
 while True:
     funcionario = input("Nome do funcionário: ")
     senha = input("Senha: ")
